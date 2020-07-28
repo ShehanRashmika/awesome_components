@@ -1,0 +1,22 @@
+PODS:
+  - awesomecomponents (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - awesomecomponents (from `.symlinks/plugins/awesomecomponents/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  awesomecomponents:
+    :path: ".symlinks/plugins/awesomecomponents/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  awesomecomponents: 4c3f9f44842571603a8f3612dd908e8be6dd68b7
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+
+COCOAPODS: 1.8.4
