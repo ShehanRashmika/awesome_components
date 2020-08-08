@@ -2,7 +2,7 @@
 
 A Flutter plugin for converting the currencies.
 
-![Sample Use](assets/ss_1.png)
+![Sample Use](assets/rsz_simulator_screen_shot_-_iphone_11_pro_max_-_2020-08-08_at_154657.png)
 
 ## Getting Started
 
