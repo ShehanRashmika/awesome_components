@@ -2,7 +2,7 @@
 
 A Flutter plugin for converting the currencies.
 
-![Image Cropping Preview](assets/ss_1.png)
+![Sample Use](assets/ss_1.png)
 
 ## Getting Started
 
@@ -44,4 +44,4 @@ import 'package:flutter_currency_converter/Currency.dart';
 
 ## Authors
 
-* **Shehan Rashmika**  - [ShehanRashmika](https://github.com/ShehanRashmika)
+* [ShehanRashmika](https://github.com/ShehanRashmika)
