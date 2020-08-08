@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
+import 'package:awesomecomponents/Currency.dart';
 import 'package:awesomecomponents/awesomecomponents.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,31 +12,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  String usd_lkr = "";
+  String aud_eur = "";
+  String aed_chf = "";
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+
+    getAmounts();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await Awesomecomponents.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
+  void getAmounts() async {
+    var usd_lkr_ = await CurrencyConverter.convert(
+        Currency(Currency.USD), Currency(Currency.LKR));
 
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
+    var aud_eur_ = await CurrencyConverter.convert(
+        Currency(Currency.AUD, amount: 200), Currency(Currency.EUR));
+
+    var aed_chf_ = await CurrencyConverter.convert(
+        Currency(Currency.AED, amount: 945), Currency(Currency.CHF));
 
     setState(() {
-      _platformVersion = platformVersion;
+      usd_lkr = usd_lkr_.toString();
+      aud_eur = aud_eur_.toString();
+      aed_chf = aed_chf_.toString();
     });
   }
 
@@ -47,10 +45,59 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Currency Convertor Example'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "1 USD to LKR = ",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  ),
+                  Text(
+                    "${usd_lkr}",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "200 AUD to EUR = ",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  ),
+                  Text(
+                    "${aud_eur}",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "945 AED to CHF = ",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  ),
+                  Text(
+                    "${aed_chf}",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

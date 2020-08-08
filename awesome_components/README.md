@@ -1,6 +1,6 @@
 # awesomecomponents
 
-A new Flutter plugin for awesome component
+A Flutter plugin for converting the currencies
 
 ## Getting Started
 
