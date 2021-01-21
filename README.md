@@ -1,4 +1,5 @@
 # flutter_currency_converter
+no-maintenance-intende
 
 A Flutter plugin for converting the currencies.
 
