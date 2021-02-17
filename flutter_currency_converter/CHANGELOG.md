@@ -1,3 +1,7 @@
+## 0.0.3
+
+Comments added
+
 ## 0.0.2
 
 Code formatted

@@ -45,3 +45,7 @@ import 'package:flutter_currency_converter/Currency.dart';
 ## Authors
 
 * [ShehanRashmika](https://github.com/ShehanRashmika)
+
+## API
+
+* [Free Currency Converter Api](https://free.currencyconverterapi.com)

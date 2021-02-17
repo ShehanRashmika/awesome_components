@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 class Http {
   static const String ENDPOINT = "https://free.currconv.com/api/v7/convert?";
   static const String COMPACT = "compact=ultra";
-  static const String API_KEY = "apiKey=36dec39034eb4e585c96";
+  static const String API_KEY =
+      "apiKey=c5c4be1a304315539b42"; //"apiKey=36dec39034eb4e585c96";
 
   static Future<http.Response> get(url) async {
     try {

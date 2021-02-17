@@ -24,12 +24,15 @@ class _MyAppState extends State<MyApp> {
   }
 
   void getAmounts() async {
+    //USD to LKR
     var usd_lkr_ = await FlutterCurrencyConverter.convert(
         Currency(Currency.USD, amount: 100), Currency(Currency.LKR));
 
+    //AUD to EUR
     var aud_eur_ = await FlutterCurrencyConverter.convert(
         Currency(Currency.AUD, amount: 200), Currency(Currency.EUR));
 
+    //AED to CHF
     var aed_chf_ = await FlutterCurrencyConverter.convert(
         Currency(Currency.AED, amount: 945), Currency(Currency.CHF));
 

@@ -12,10 +12,17 @@ class FlutterCurrencyConverter {
   static const MethodChannel _channel =
       const MethodChannel('flutter_currency_converter');
 
+  /*
+  from currency and to currency
+  must provide type
+
+  ex - convert(Currency(Currency.USD),Currency(Currency.LKR));
+
+  */
   static Future<double> convert(Currency from, Currency to) async {
     try {
       if (from.type.isEmpty || to.type.isEmpty) {
-        print("type or ammount is missing");
+        print("type or amount is missing");
         return null;
       }
 
